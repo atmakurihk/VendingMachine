@@ -63,7 +63,6 @@ public class VendingMachineImpl implements VendingMachine {
      */
     public int getSelectedItemPrice(Product product) throws ProductNotFoundException {
 
-        System.out.println("product in interface " + product.getName());
         List<Map.Entry<Product, Integer>> productPrice = this.productInventory.getInventory().entrySet().stream().filter(e -> e.getKey().getName().equals(product.getName())).collect(Collectors.toList());
         if (productPrice.size() != 0) {
             this.product = product;
